@@ -1,0 +1,108 @@
+<style>
+    body{
+        background-color: blanchedalmond;
+    }
+    h1{
+        text-align: center;
+        color: rgb(8, 90, 189);
+    }
+    table{
+        border: 3px solid black;
+        position: relative;
+        top: 10%;
+        left: 36%;
+
+    }
+     tr td{
+        border: 1px solid black;
+        font-size:x-large;
+    }
+    #btn{
+        width: 100%;
+        background-color: rgb(219, 223, 172);
+        color:black;
+        font-size: x-large;
+        
+    }
+    #output
+    {
+        border: 2px solid black;
+        display: none;
+        max-width: max-content;
+    }
+    input{
+        padding: 10px;
+        font-size: 1em;
+    }
+</style>
+<h1>Student Information</h1>
+<table>
+    <tr>
+        <td>Name</td>
+        <td><input type="text" id="namevalue"></td>
+    </tr>
+    <tr> <td>Age</td>
+        <td><input type="text" id="num"></td>
+    </tr>
+    
+    <tr>
+        <td>course</td>
+        <td><input type="text" id="alpha"></td>
+    </tr>
+    <tr>
+        <td>E-mail</td>
+        <td><input type="text" id="longtxt"></td>
+    </tr>
+    <tr>
+
+        <td colspan="2"><button onclick="save()" id="btn">save</button></td>
+    </tr>
+</table>
+<table id="output">
+    <tr>
+    <td>Name</td>
+    <td>Age</td>
+    <td>course</td>
+    <td>mailID</td>
+    <td>Action</td>
+    </tr>
+</table>
+<script>
+    
+    let nameval=document.getElementById("namevalue")
+    let numval=document.getElementById("num")
+    //let genval=document.getElementsByName("gender")
+    let courseval=document.getElementById("alpha")
+    let mailval=document.getElementById("longtxt")
+    let newtable=document.getElementById("output")
+    function save(){
+        //creating row elements
+        let row=document.createElement("tr")
+        //creating cells
+        let c1=document.createElement("td")
+        let c2=document.createElement("td")
+        let c3=document.createElement("td")
+        let c4=document.createElement("td")
+        let c5=document.createElement("td")
+        //insert the data
+        c1.innerText=nameval.value
+        c2.innerText=numval.value
+        c3.innerText=courseval.value
+        c4.innerText=mailval.value
+        c5.innerHTML="<button> Delete</button>"
+        row.appendChild(c1)
+        row.appendChild(c2)
+        row.appendChild(c3)
+        row.appendChild(c4)
+        row.appendChild(c5)
+
+        newtable.appendChild(row)
+        newtable.style.display="block"
+
+
+
+       
+      
+    }
+    
+</script>
